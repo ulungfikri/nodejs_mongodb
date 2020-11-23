@@ -12,3 +12,13 @@ First you create directory
 ```bash
 	npm install express mongoose body-parser cors --save
 ```
+
+## Project setup
+```
+	npm install
+```
+
+### Run
+```
+	node server.js
+```

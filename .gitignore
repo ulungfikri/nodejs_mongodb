@@ -1,4 +1,5 @@
 #.env
 #package.json
 package-lock.json
+note.txt
 /node_modules

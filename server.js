@@ -34,11 +34,13 @@ db.mongoose
 
 
 
-
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to rest api node js." });
 });
+
+
+require("./app/routes/article.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

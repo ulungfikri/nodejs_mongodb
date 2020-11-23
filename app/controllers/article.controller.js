@@ -44,7 +44,7 @@ exports.findAll = (req, res) => {
 	.catch(err => {
 		res.status(500).send({
 			message:
-			err.message || "Some error occurred while retrieving tutorials."
+			err.message || "Some error occurred while retrieving articles."
 		});
 	});
 };
@@ -115,7 +115,7 @@ exports.delete = (req, res) => {
 	})
 	.catch(err => {
 		res.status(500).send({
-			message: "Could not delete Tutorial with id=" + id
+			message: "Could not delete Article with id=" + id
 		});
 	});
 };
@@ -124,10 +124,32 @@ exports.delete = (req, res) => {
 
 // Delete all Article from the database.
 exports.deleteAll = (req, res) => {
-  
+	Article.deleteMany({})
+	.then(data => {
+		res.send({
+			message: `${data.deletedCount} Articles were deleted successfully!`
+		});
+	})
+	.catch(err => {
+		res.status(500).send({
+			message:
+			err.message || "Some error occurred while removing all articles."
+		});
+	});
 };
+
+
 
 // Find all published Article
 exports.findAllPublished = (req, res) => {
-  
+	Article.find({ published: true })
+	.then(data => {
+		res.send(data);
+	})
+	.catch(err => {
+		res.status(500).send({
+			message:
+			err.message || "Some error occurred while retrieving articles."
+		});
+	});
 };

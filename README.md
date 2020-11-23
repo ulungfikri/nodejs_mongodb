@@ -1,3 +1,4 @@
+First you create directory
 ```bash 
 	mkdir nodejs-mongodb
 ```

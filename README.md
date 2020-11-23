@@ -8,3 +8,6 @@ First you create directory
 ```bash
 	npm init
 ```
+```bash
+npm install express mongoose body-parser cors --save
+```
